@@ -31,8 +31,8 @@ add_theme_support('genesis-menus', array(
 ));
 
 //*Add new image sizes
-add-image-size('home-top', 780, 354, TRUE);
-add_image-size('home-middle', 375, 175, TRUE);
+add_image_size('home-top', 780, 354, TRUE);
+add_image_size('home-middle', 375, 175, TRUE);
 
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
