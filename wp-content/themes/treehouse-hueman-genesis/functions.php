@@ -25,7 +25,7 @@ add_theme_support('genesis-structural-wraps', array(
 ));
 
 //* Rename menus
-add_theme-support('genesis-menus', array(
+add_theme_support('genesis-menus', array(
     'primary' => __('Header Top Navigation Menu', 'treehouse-hueman-genesis'),
     'secondary' => __('Header Bottom Navigation Menu', 'treehouse-hueman-genesis')
 ));
