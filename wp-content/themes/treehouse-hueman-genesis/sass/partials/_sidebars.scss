@@ -41,9 +41,7 @@
 }
 
 .s1-expand .s1, .s2-expand .s2 {
-	-moz-transition: width .2s ease;
-	-webkit-transition: width .2s ease;
-	transition: width .2s ease;
+    @include transition(width, 0.2s, ease);
 }
 
 /* toggle icon */
@@ -96,7 +94,7 @@
 	width: 260px;
 	z-index: 1;
 	.sidebar-top, .sidebar-toggle {
-		background: #82b965;
+		background: $color-sidebar2-background;
 	}
 }
 
