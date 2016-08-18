@@ -15,7 +15,7 @@
 /* ------------------------------------------------------------------------- */
 @media only screen and (max-width: 719px) {
 	/* make collapsed sidebars 40px wide instead of 50px */
-	.s1, .s2 {
+	.sidebar-primary, .sidebar-secondary {
 		width: 40px;
 	}
 	/* 2 column, content right */
@@ -24,7 +24,7 @@
 			background-position: -300px 0 !important;
 			padding-left: 40px;
 		}
-		.s1 {
+		.sidebar-primary {
 			margin-left: -40px;
 		}
 	}
@@ -34,7 +34,7 @@
 			background-image: url(img/sidebar/s-right-collapse-40.png);
 			padding-right: 40px;
 		}
-		.s1 {
+		.sidebar-primary {
 			margin-right: -40px;
 		}
 	}
@@ -48,10 +48,10 @@
 			padding-left: 40px;
 			padding-right: 40px;
 		}
-		.s1 {
+		.sidebar-primary {
 			margin-left: -40px;
 		}
-		.s2 {
+		.sidebar-secondary {
 			margin-right: -40px;
 		}
 	}
@@ -61,13 +61,13 @@
 			background: url(img/sidebar/s-right-dual-full-collapse-40.png) repeat-y right;
 			padding-right: 80px;
 		}
-		.s1 {
+		.sidebar-primary {
 			margin-right: -80px;
 		}
-		.s2 {
+		.sidebar-secondary {
 			margin-right: -40px;
 		}
-		&.s2-expand .s2 {
+		&.sidebar-secondary-expand .sidebar-secondary {
 			right: 40px;
 		}
 	}
@@ -77,13 +77,13 @@
 			background: url(img/sidebar/s-left-dual-full-collapse-40.png) repeat-y left;
 			padding-left: 80px;
 		}
-		.s1 {
+		.sidebar-primary {
 			margin-left: -80px;
 		}
-		.s2 {
+		.sidebar-secondary {
 			margin-left: -40px;
 		}
-		&.s2-expand .s2 {
+		&.sidebar-secondary-expand .sidebar-secondary {
 			left: 40px;
 		}
 	}
@@ -345,12 +345,12 @@
 		background-image: none !important;
 		padding: 0 !important;
 	}
-	.s2 {
+	.sidebar-secondary {
 		right: 0 !important;
 		left: 0 !important;
 	}
 	/* hide */
-	.mobile-sidebar-hide-s1 .s1, .mobile-sidebar-hide-s2 .s2, .mobile-sidebar-hide .sidebar {
+	.mobile-sidebar-hide-s1 .sidebar-primary, .mobile-sidebar-hide-s2 .sidebar-secondary, .mobile-sidebar-hide .sidebar {
 		display: none;
 	}
 	/* base */
