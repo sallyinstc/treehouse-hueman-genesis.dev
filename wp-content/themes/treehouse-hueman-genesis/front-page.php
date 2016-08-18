@@ -19,14 +19,11 @@ function hueman_home_genesis_meta() {
 		//* Force sidebar-content-sidebar layout setting
 		add_filter( 'genesis_site_layout', '__genesis_return_sidebar_content_sidebar' );
 
-		//* Add hueman-pro-home body class
-		add_filter( 'body_class', 'hueman_body_class' );
-
 		//* Remove breadcrumbs
 		remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 
 		//* Remove the default Genesis loop
-		//remove_action( 'genesis_loop', 'genesis_do_loop' );
+		remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 		//* Add home widgets
 		add_action( 'genesis_loop', 'hueman_home_widgets' );
@@ -39,13 +36,13 @@ function hueman_home_widgets() {
 	echo '<div id="home-widgets" class="home-widgets">';
 
 	genesis_widget_area( 'home-top', array(
-		'before' => '<div class="home-top widget-area">',
-		'after'  => '</div>',
+		'before' => '<div id="home-top" class="home-top widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
 	) );
 
 	genesis_widget_area( 'home-bottom', array(
-		'before' => '<div class="home-bottom widget-area">',
-		'after'  => '</div>',
+		'before' => '<div id="home-bottom" class="home-bottom widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
 	) );
 
 	echo '</div>';

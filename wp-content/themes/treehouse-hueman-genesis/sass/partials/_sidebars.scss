@@ -5,14 +5,10 @@
 	padding-bottom: 20px;
 	position: relative;
 	z-index: 2;
-	.pad {
+	.wrap {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-}
-
-.sidebar-top {
-	padding: 15px 30px;
 	p {
 		float: left;
 		color: #fff;
@@ -23,63 +19,31 @@
 		line-height: 24px;
 		padding: 3px 0;
 	}
-}
-
-.sidebar-toggle {
-	display: none;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	height: 50px;
-	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-	i {
-		font-size: 38px;
-		color: #fff;
-		padding: 5px 0;
-	}
-}
-
-.s1-expand .s1, .s2-expand .s2 {
-    @include transition(width, 0.2s, ease);
-}
-
-/* toggle icon */
-
-.icon-sidebar-toggle:before {
-	font-family: FontAwesome;
-}
-
-.col-2cl .s1 .icon-sidebar-toggle:before, .col-3cl .s1 .icon-sidebar-toggle:before, .col-3cm .s2 .icon-sidebar-toggle:before, .col-3cl .s2 .icon-sidebar-toggle:before {
-	content: "\f100";
-}
-
-.col-2cr .s1 .icon-sidebar-toggle:before, .col-3cm .s1 .icon-sidebar-toggle:before {
-	content: "\f101";
-}
-
-.col-3cr {
-	.s1 .icon-sidebar-toggle:before, .s2 .icon-sidebar-toggle:before {
-		content: "\f101";
+	> .widget:first-of-type {
+		background-color: #3b8dbd;
+		padding: 15px 30px;
+		h4 {
+			font-size: 16px;
+			color: #fff;
+			text-transform: uppercase;
+			padding: 3px 0;
+		}
 	}
 }
 
 /* sidebar primary */
 
-.s1 {
+.sidebar-primary {
 	width: 340px;
 	z-index: 2;
 	&:hover {
 		z-index: 98;
 		/* social icons tooltip above header nav */
 	}
-	.sidebar-top, .sidebar-toggle {
-		background: #3b8dbd;
-	}
 }
 
 @media only screen and (min-width: 479px) and (max-width: 960px) {
-	.s1 .sidebar-top {
+	.sidebar-primary .sidebar-top {
 		background: none !important;
 		border-bottom: 1px solid #ddd;
 		p, .social-links .social-tooltip {
@@ -90,16 +54,17 @@
 
 /* sidebar secondary */
 
-.s2 {
+.sidebar-secondary {
 	width: 260px;
 	z-index: 1;
-	.sidebar-top, .sidebar-toggle {
-		background: $color-sidebar2-background;
+	> .widget:first-of-type {
+		background-color: #82b965;
+		padding: 15px 30px;
 	}
 }
 
 @media only screen and (min-width: 479px) and (max-width: 1200px) {
-	.s2 .sidebar-top {
+	.sidebar-secondary .sidebar-top {
 		background: none !important;
 		border-bottom: 1px solid #ddd;
 		p {

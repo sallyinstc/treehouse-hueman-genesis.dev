@@ -1,35 +1,11 @@
-//Transition
-//Usage: @include transition(all, 0.2s, ease-in-out);
-@mixin transition($transition-property, $transition-time, $method){
-    -webkit-transition:$transition-property $transition-time $method;
-    -moz-transition:$transition-property $transition-time $method;
-    -ms-transiton:$transition-property $transition-time $method;
-    -o-transition:$transition-property $transition-time $method;
-    transition:$transition-property $transition-time $method;
-}
-
-//Appearance
-//Usage: @include appearance(none);
-@mixin appearance($value){
-    -webkit-appearance:$value;
-    -moz-appearance:$value;
-    appearance:$value;
-}
-
-//Box sizing
-//Usage: @include box-sizing($value);
-    @mixin box-sizing($value...){
-    -webkit-box-sizing: $value;
-    -moz-box-sizing: $value;
-    box-sizing: $value;
-}
-
-//Border radius
-//Usage: @include border-radius($value);
-@mixin border-radius($value){
-  -moz-border-radius: $value;
-  -webkit-border-radius: $value;
-  border-radius:$value;
+// Transition
+// Usage: @include transition(all, 0.2s, ease-in-out);
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
 }
 
 /* Fool-proof @font-face */
@@ -53,4 +29,9 @@
 			src: url('#{$file-path}.svg##{$font-family}') format('svg');
 		}
 	}
+}
+
+@mixin border-radius($px) {
+	-webkit-border-radius: $px;
+	border-radius: $px;
 }
