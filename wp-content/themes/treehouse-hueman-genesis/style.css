@@ -257,6 +257,7 @@ input[type="search"] {
 .site-footer:before,
 .site-header:before,
 .site-inner:before,
+.sidebar .widget:before,
 .wrap:before {
   content: " ";
   display: table;
@@ -274,6 +275,7 @@ input[type="search"] {
 .site-footer:after,
 .site-header:after,
 .site-inner:after,
+.sidebar .widget:after,
 .wrap:after {
   clear: both;
   content: " ";
@@ -3529,10 +3531,31 @@ li #reply-title {
 
 /*  base : sidebar
 /* ------------------------------------ */
+.widget {
+  color: #777;
+  font-size: 15px;
+  overflow: hidden;
+}
+
+.widget h4.widget-title {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
 .sidebar {
   padding-bottom: 20px;
   position: relative;
   z-index: 2;
+}
+
+.sidebar .widget {
+  padding: 30px 30px 20px;
+}
+
+.sidebar li {
+  font-weight: 300;
 }
 
 .sidebar .wrap {
@@ -3603,6 +3626,64 @@ li #reply-title {
   .sidebar-secondary .sidebar-top p {
     color: #666;
   }
+}
+
+.widget.simple-social-icons h4.widget-title {
+  float: left;
+  margin-bottom: 0px;
+}
+
+.widget.simple-social-icons ul.alignright {
+  float: right;
+  position: relative;
+  padding-top: 2px;
+}
+
+.widget.simple-social-icons ul.alignright li {
+  display: inline-block;
+  line-height: 16px;
+  font-size: 0px;
+  margin: 0px 0px 0px 8px !important;
+}
+
+.widget.simple-social-icons ul.alignright li a {
+  display: block !important;
+  padding: 1px !important;
+  position: relative;
+  text-align: center;
+}
+
+.widget_lsi_widget h4.widget-title {
+  float: left;
+  margin-bottom: 0px;
+}
+
+.widget_lsi_widget .lsi-social-icons {
+  float: right;
+  position: relative;
+  padding-top: 2px;
+}
+
+.widget_lsi_widget .lsi-social-icons li {
+  display: inline-block;
+  line-height: 16px;
+  font-size: 0px;
+  margin: 0px 0px 0px 8px !important;
+}
+
+.widget_lsi_widget .lsi-social-icons li a {
+  display: block !important;
+  padding: 0px !important;
+  position: relative;
+  text-align: center;
+}
+
+.widget_lsi_widget .lsi-social-icons li a.tooltip {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+  display: inline;
+  position: relative;
+  z-index: 110;
 }
 
 /* ------------------------------------------------------------------------- *
