@@ -46,6 +46,7 @@ input[type="search"] {
 .site-footer:before,
 .site-header:before,
 .site-inner:before,
+.sidebar .widget:before,
 .wrap:before {
 	content: " ";
 	display: table;
@@ -63,6 +64,8 @@ input[type="search"] {
 .site-footer:after,
 .site-header:after,
 .site-inner:after,
+.sidebar .widget:after,
+
 .wrap:after {
 	clear: both;
 	content: " ";
