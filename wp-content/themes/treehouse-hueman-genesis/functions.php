@@ -17,6 +17,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'hueman_scripts_styles' );
 function hueman_scripts_styles() {
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), 'treehouse-hueman-genesis' );
+        wp_enqueue_script('global', get_stylesheet_directory_uri().'/js//min/global-min.js', array('jquery', 'global;'), '1.0', true);
+        wp_enqueue_script('matchHeights', get_stylesheet_directory_uri().'/js/min/jquery.matchHeight-min.js', array('jquery'), '0.5.2', trye);
 }
 
 //* Add support for structural wraps
@@ -79,6 +81,13 @@ get_template_part('lib/page-title');
 add_filter( 'genesis_title_comments', 'hueman_title_comments' );
 function hueman_title_comments() {
 	return '<h3>' . get_comments_number() . ' Responses to ' . get_the_title() . '</h3>';
+}
+
+//* Customize search form input box text
+add_filter('genesis_search_text', 'hueman_search_text');
+function hueman_search_text($text){
+    return esc_attr('To search, type and hit enter');
+    
 }
 
 //* Add support for 3-column footer widgets

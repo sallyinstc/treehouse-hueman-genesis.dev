@@ -1,6 +1,6 @@
 <?php
 /**
- * This file adds the Home Page to the Treehouse Hueman Genesis Theme.
+ * This file adds the Front Page to the Treehouse Hueman Genesis Theme.
  *
  * @author StudioPress
  * @package Treehouse Hueman Genesis
@@ -9,7 +9,7 @@
 
 add_action( 'genesis_meta', 'hueman_home_genesis_meta' );
 /**
- * Add widget support for homepage. If no widgets active, display the default loop.
+ * Add widget support for front page. If no widgets active, display the default loop.
  *
  */
 function hueman_home_genesis_meta() {
