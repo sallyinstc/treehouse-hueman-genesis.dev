@@ -84,6 +84,44 @@ function hueman_title_comments() {
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+//* Reposition the site footer
+remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+add_action( 'genesis_after', 'genesis_footer_markup_open', 5 );
+add_action( 'genesis_after', 'genesis_do_footer' );
+add_action( 'genesis_after', 'genesis_footer_markup_close', 15 );
+
+// Footer Copyright notice
+add_filter('genesis_footer_output', 'hueman_genesis_footer_output_filter', 10, 3);
+function hueman_genesis_footer_output_filter() {
+
+	echo '<div class="footer-menu">';
+	echo wp_nav_menu( array('menu' => 'Footer Nav') );
+	echo '</div>';
+	echo '<a href="#" rel="nofollow" class="gototop"><i class="arrow-up"></i></a>';
+
+	$creds = '<p>Copyright &copy;2014&ndash;' . date('Y'). ' - <a href="' . trailingslashit( get_bloginfo('url') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '" rel="nofollow">Hueman for Genesis</a><br />Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>. Theme by <a href="http://www.teamtreehouse.com" target="_blank">Jesse Petersen for Treehouse</a>';
+
+	$output = '<div class="creds">' . $creds . '</div></div>';
+
+	return $output;
+
+}
+
+//* Add smooth scrolling for any link having the class of "top"
+add_action('wp_footer', 'hueman_genesis_go_to_top');
+function hueman_genesis_go_to_top() { ?>
+	<script type="text/javascript">
+		jQuery(function($) {
+			$('a.gototop').click(function() {
+				$('html, body').animate({scrollTop:0}, 'slow');
+				return false;
+			});
+		});
+	</script>
+<?php }
+
 //* Register widget areas
 genesis_register_sidebar( array(
 	'id'          => 'home-top',
